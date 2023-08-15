@@ -1,0 +1,8 @@
+user email: bob@bob.com
+user password: asdf
+
+admin email: admin@amin.com
+admin password: asdf
+
+
+to access the booking page you need to log in first.
