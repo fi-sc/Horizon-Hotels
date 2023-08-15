@@ -1,0 +1,80 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Terms and conditions document
+-->
+
+
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+
+
+
+
+
+<div class="termsandpolicy">
+    <h1>Terms and Conditions</h1>
+    <br>
+    <p>
+        You must agree that:
+        •	You are at least 18 or older to use our platform and services. We reserve the right to request proof of identity and age upon arrival.<br>
+        •	We will collect your personal data. This data is processed in accordance with our Privacy Statement and also according to any GDPR applicable laws and regulations.<br>
+        •	You will not smoke in the premises, tampering with the fire alarm is prohibited and you will be charged a fine of £200.<br>
+        We retain the right to deny access to anyone to our Platform and services, at any time for any reason, including, but not limited to, violation of these Terms.<br>
+    </p>
+    <br>
+    <h2>1. Prices</h2>
+
+    <p>
+        Room prices are inclusive of VAT, per room and per night and must be paid in the currency you have selected. Our currency conversion is for information purposes only 
+        When you make a reservation, we'll give you a total price for the rooms and number of nights you've requested. The price you pay is the price quoted to you at the time you make your reservation.
+    </p>
+    <br>
+    <h2>2. Damages to Hotel</h2>
+    <p>Any damage to rooms or the hotel premises caused by your party and items missing after your stay will be charged to your credit card on file.</p>
+    <br>
+    <h2>3. Advanced Booking</h2>
+    <p> 
+        Bookings can be made up to 3 months in advance. Payment in full is required for discounted bookings at the time of booking.
+        Advanced booking deals are valid as long as the booking is not alternated. Once the booking is alternated, the discount will no longer apply.<br>
+        <br>If you book between 80-90 days in advance you will receive a discount of 20% (Discount percentage on total booking price) <br>
+
+        <br>If you book between 60-79 days in advance you will receive a discount of 10% (Discount percentage on total booking price)<br>
+
+        <br>If you book between 45-59 days in advance you will receive a discount of 5% (Discount percentage on total booking price)<br>
+
+        <br>If you book under 45 days, you will not receive a discount on your total booking price<br>
+    </p>
+    <br>
+    <h2>4. Cancellation </h2>
+    <p>Booking cancellation before 60 days of booking date does not incur cancellation charges. Booking cancellation between 30 and 60 days of booking date will incur charges up to 50% of booking price. Within 30 days of booking date 100% of booking price will be charged.</p>
+    <br>
+    <h2>6. Wi-Fi</h2>
+    <p>
+        We provide Wi-Fi without warranties of any kind; available our services may be interrupted or contain errors at any time of your stay. We are not responsible for the security or accuracy of any information that you transmit/receive while using our network.
+        Our network is provided to you at our discretion. If you use our network for any unlawful, prohibited reasons we will hold the right to block, suspend or terminated your access.
+    </p>
+    <br>
+    <h2>7. Occupancy</h2>
+    <p>
+        The maximum occupancy for a standard room is one adult. Double rooms (where available) can accommodate two guests.  Family rooms (where available) can accommodate up to six guests. You must not exceed the maximum occupancy for the room allocated to you. 
+        We do not allow pets
+    </p>
+</div>
+
+
+
+
+<!--Footer-->
+{% include "footer.html" %}
+
+</body>
+</html>
+
+{% endblock %}

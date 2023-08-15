@@ -1,0 +1,85 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Admin area to add new hotel to database. 
+-->
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+
+<form method = "POST">
+<h1>Add Hotel</h1>
+
+{% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+{% endif %}
+
+<div class ="tableContainer">
+    
+
+        <div class="addHotel1">
+            <h3>Add Hotel</h3>
+            <div class="table">
+            <table> 
+                <tr>
+                    <th> Hotel ID</th>
+                    <th> City </th> 
+                    <th> Total Capacity </th> 
+                    <th> Off Peak Price </th> 
+                    <th> On Peak Price </th>
+                    <th> Standard Rooms </th>
+                    <th> Double Rooms </th>
+                    <th> Family Rooms</th>
+                </tr>
+                {% for row in hotels %}
+                <tr> 
+                    <td>{{row[0]}}</td> 
+                    <td>{{row[1]}}</td> 
+                    <td>{{row[2]}}</td> 
+                    <td>{{row[3]}}</td> 
+                    <td>{{row[4]}}</td> 
+                    <td>{{row[5]}}</td> 
+                    <td>{{row[6]}}</td> 
+                    <td>{{row[7]}}</td> 
+                </tr>
+                {% endfor %}  
+            </table>
+        </div>  
+
+        <br/>
+        <p>Hotel ID</p>
+        <input type="number" name="idHotel" id="idHotel"  min="1" required></input>
+        <p>City</p>
+        <input type="text" name="city_hotel" id="city_hotel" required></input>
+        <p>Total Capacity</p>
+        <input type="number" name="total_capacity" id="total_capacity"  min="1" required></input>
+        <p>Off Peak Price</p>
+        <input type="number" name="off_peak" id="off_peak"  min="1" required></input>
+        <p>On Peak Price</p>
+        <input type="number" name="on_peak" id="on_peak"  min="1" required></input>
+        <p>Standard Capacity</p>
+        <input type="number" name="standard_cap" id="standard_cap"  min="1" required></input>
+        <p>Double Capacity</p>
+        <input type="number" name="double_cap" id="double_cap"  min="1" required></input>
+        <p>Family Capacity</p>
+        <input type="number" name="family_cap" id="family_cap" min="1"  required></input><br/>
+        
+        <input type="submit" value="Add Hotel" > <br/>
+            
+        </div>
+    </div>
+</form>
+
+
+
+<!--Footer-->
+{% include "footer.html" %}
+
+
+
+{% endblock %}

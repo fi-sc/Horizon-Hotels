@@ -1,0 +1,125 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Shows all the rooms available
+-->
+
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+
+
+
+<section>
+
+    <hr class="divider">
+
+    <!--Standard Room-->
+    <div class="typesContainer">
+        <div class="ContainerSelect">
+            <!-- Legal note: images were taken from Pixabay and are ‘Free for commercial use, no attribution required’ -->
+            <img src="../static/Rooms Pictures/Standard/1S-min.jpg" alt="Standard Bedroom">
+            <!-- Description and Amenities -->
+            <div class="descriptionColumn">
+                <h3>Standard Room</h3>
+                <p>A quiet and private standard room is a home away from home for those looking for a simple and convenient stay.
+                    Our Standard Room is well-equipped with private bathroom and seating area. This is the perfect option for 
+                    those looking for a cosy and affordable stay.</p>
+                <p>Accommodates: 1 <br><br>Beds: 1 Double</p>                
+                <hr class="divider">
+                <div class="tooltipFrame">
+                    <!-- Legal note: icons were taken from https://icons8.com and free to use royalty free -->
+                    <div class="tool"><img src="../static/Icons/amenities/acRoom.png" width="40" height="auto" alt="a/c">
+                        <span class="tooltip">A/C</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/wifiRoom.png" width="40" height="auto" alt="wifi">
+                        <span class="tooltip">WiFi</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/safeRoom.png" width="40" height="auto" alt="safe">
+                        <span class="tooltip">Safe</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/phoneRoom.png" width="40" height="auto" alt="telephone">
+                        <span class="tooltip">Telephone</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/tvRoom.png" width="40" height="auto" alt="tv">
+                        <span class="tooltip">TV</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <br><hr class="divider">
+
+        <!--Double room-->
+        <div class="ContainerSelect">
+            <!-- Legal note: images were taken from Pixabay and are ‘Free for commercial use, no attribution required’ -->
+            <img src="../static/Rooms Pictures/Double/1D-min.jpg" alt="Bedroom">
+            <!-- Description and Amenities -->
+            <div class="descriptionColumn">
+                <h3>Double Room</h3>
+                <p>Our Double Room is a guaranteed comfortable and affordable stay. You'll enjoy all the amenities you need 
+                    for a great night's sleep, including a private bathroom and a TV,  perfect for those who need a comfortable
+                    and functional place to rest their head.</p>   
+                <p>Accommodates: 2 <br><br>Beds: 1 Double</p>             
+                <hr class="divider">
+                <div class="tooltipFrame">
+                    <!-- Legal note: icons were taken from https://icons8.com and free to use royalty free -->
+                    <div class="tool"><img src="../static/Icons/amenities/acRoom.png" width="40" height="auto" alt="a/c">
+                        <span class="tooltip">A/C</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/wifiRoom.png" width="40" height="auto" alt="wifi">
+                        <span class="tooltip">WiFi</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/safeRoom.png" width="40" height="auto" alt="safe">
+                        <span class="tooltip">Safe</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/phoneRoom.png" width="40" height="auto" alt="telephone">
+                        <span class="tooltip">Telephone</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/tvRoom.png" width="40" height="auto" alt="tv">
+                        <span class="tooltip">TV</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/deskRoom.png" width="40" height="auto" alt="desk">
+                        <span class="tooltip">Workspace</span></div>
+                </div>
+            </div>
+        </div>
+          
+        <br><hr class="divider">
+
+        <!--Family room-->
+        <div class="ContainerSelect">
+            <!-- Legal note: images were taken from Pixabay and are ‘Free for commercial use, no attribution required’ -->
+            <img src="../static/Rooms Pictures/Family/1F-min.jpg"alt="Bedroom">
+             <!-- Description and Amenities -->
+            <div class="descriptionColumn">
+                <h3>Family Room</h3>
+                <p>Our Family Rooms offer a getaway for the whole family. There's enough room for everyone to sleep comfortably.
+                    The large screen TV has enough channels for everyone to watch their favourite show and gives everyone the 
+                    chance to relax and reconnect.</p>
+                <p>Accommodates: 6 <br><br>Beds: Up to 3 Doubles</p>
+                <hr class="divider">
+                <div class="tooltipFrame">
+                    <!-- Legal note: icons were taken from https://icons8.com and free to use royalty free -->
+                    <div class="tool"><img src="../static/Icons/amenities/acRoom.png" width="40" height="auto" alt="a/c">
+                        <span class="tooltip">A/C</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/wifiRoom.png" width="40" height="auto" alt="wifi">
+                        <span class="tooltip">WiFi</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/safeRoom.png" width="40" height="auto" alt="safe">
+                        <span class="tooltip">Safe</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/phoneRoom.png" width="40" height="auto" alt="telephone">
+                        <span class="tooltip">Telephone</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/tvRoom.png" width="40" height="auto" alt="tv">
+                        <span class="tooltip">TV</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/minibarRoom.png" width="40" height="auto" alt="minibar">
+                        <span class="tooltip">Minibar</span></div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--Footer-->
+{% include "footer.html" %}
+
+</body>
+</html>
+
+
+{% endblock %}

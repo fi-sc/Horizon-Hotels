@@ -1,0 +1,44 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: End booking page, where user receipt is created. 
+-->
+
+
+{% extends "navbar.html" %}
+{% block body %} 
+
+<form  method = "POST">
+    <div class="endBook">
+    <div class="formTopInline">
+    <!-- Legal note: image was created by myself so there is no copyright -->
+    <img src="../static/Logo/1.png" alt="Square HH logo picture."></div>
+    
+    <h2>Hotel has been booked!</h2></br>
+    <h3>Receipt:</h3></br>
+        <h4>Booking ID: {{bookingID}} </h4>
+        <p>Name: {{userDetails[1]}} {{userDetails[2]}}</p>
+        <p>Email: {{userDetails[3]}} </p>
+        <p>Hotel: {{searchQuery[7]}}</p>
+        <p>Number of guests : {{searchQuery[6]}} </p>
+        <p>Check-in Date : {{searchQuery[4]}} </p>
+        <p>Check-out Date : {{searchQuery[5]}} </p>
+        <p>Number of nights : {{searchQuery[1]}} </p>
+        <p>Total Price : {{searchQuery[2]}} </p>
+
+</div>
+</form>
+
+<!--Footer-->
+{% include "footer.html" %}
+{% endblock %}
+
+
+
+
+
+
+
+

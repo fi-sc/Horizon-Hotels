@@ -1,0 +1,67 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Form to search for a hotel to book 
+-->
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+
+
+<form  method = "POST">
+    <div class="formTopInline">
+        <!-- Legal note: image was created by myself so there is no copyright -->
+        <img src="../static/Logo/1.png" alt="Square HH logo picture.">
+
+        {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+        <p>Hotel:</p>
+            <select name="city">
+            {% for c in city %}
+                <option value={{c[0]}}>{{c[1]}}</option>
+            {% endfor %}
+            </select>
+
+      
+        <p>Check In</p>
+        <input type="date" name="indate" id="indate" required></input>
+
+
+        <p>Check Out</p>
+        <input type="date" name="outdate" id="outdate" required></input>
+        
+
+        <p>Room:</p>
+            <select name="room">
+                <option value=standard>Standard</option>
+                <option value=double>Double</option>
+                <option value=family>Family</option>
+            </select>
+
+        <p>Guests</p>
+        <input type="number" name="guestschecked" id="guestschecked"  min="1" required></input>
+
+        <p>Currency:</p>
+            <select name="currency">
+                <option value=gbpounds>GBP</option>
+                <option value=eur>EUR</option>
+                <option value=usdollars>USD</option>
+            </select>
+
+        <input type="submit" name = "submit_search" value="Proceed"/>
+
+    </div>
+</form>
+
+
+<!--Footer-->
+{% include "footer.html" %}
+
+
+{% endblock %}

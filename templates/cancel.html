@@ -1,0 +1,47 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Where user can cancel a booking 
+-->
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+<form action="/cancel" method="POST">
+
+<p>You will be charged: £{{message}}</p>
+
+
+
+<div>
+    
+    {% if pay == True %}
+    <div style="padding:10px;">
+        <h3> How would you like to pay? </h3>
+            <input type="radio" name="card" value="card">
+            <label for="card">Credit or Debit Card</label></br>
+            </br><input type="radio" name="card" value="paypal">
+            <label for="paypal">Paypal</label></br>
+            <p>By continuing to the next step of your booking, you are agreeing to the our Terms and Conditions and Privacy Policy.</p>
+    </div>
+    {% endif %}
+  
+
+
+ 
+<br/><input type="submit" name = "cancelled" value = "Cancel Booking"><br/> 
+ 
+</div>
+  
+
+</form>
+
+
+<!--Footer-->
+{% include "footer.html" %}
+
+{% endblock %}

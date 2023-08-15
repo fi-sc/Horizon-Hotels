@@ -1,0 +1,58 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Locations photogrid
+-->
+
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+
+<section>
+    <div class="aboutusGrid">
+        <div class="photoGrid">
+                <h1>Our Locations</h1>
+            
+            <!-- Legal note: images were taken from Pixabay 
+            and are ‘Free for commercial use, no attribution required’ -->
+            <img src="../static/Photo Grid/city1-min.jpg" style="width: 100%"  alt="bridge and building ">
+            <img src="../static/Photo Grid/city2-min.jpg" style="width: 100%"  alt="building">
+            <img src="../static/Photo Grid/city3-min.jpg" style="width: 100%"  alt="river and building">
+            <img src="../static/Photo Grid/city4-min.jpg" style="width: 100%"  alt="river and building">
+            <img src="../static/Photo Grid/city5-min.jpg" style="width: 100%"  alt="river and bridge">
+            <img src="../static/Photo Grid/city6-min.jpg" style="width: 100%"  alt="river">
+            <img src="../static/Photo Grid/city7-min.jpg" style="width: 100%"  alt="grass and cathedral">
+            
+
+        </div>
+        <div class="photoGrid">
+            <img src="../static/Photo Grid/city8-min.jpg" style="width: 100%"  alt="church spire">
+            <img src="../static/Photo Grid/city9-min.jpg" style="width: 100%"  alt="alleyway">
+            <img src="../static/Photo Grid/city10-min.jpg" style="width: 100%"  alt="bulidings and river">
+            <img src="../static/Photo Grid/city11-min.jpg" style="width: 100%"  alt="block of flats">
+            <img src="../static/Photo Grid/city12-min.jpg" style="width: 100%"  alt="lots of builings">
+            <img src="../static/Photo Grid/city13-min.jpg" style="width: 100%"  alt="road and builings">
+            <img src="../static/Photo Grid/city14-min.jpg" style="width: 100%"  alt="road and builings">
+
+           
+        </div>
+
+    </div>
+</section>
+
+
+
+<!--Footer-->
+{% include "footer.html" %}
+
+</body>
+</html>
+
+
+
+{% endblock %}

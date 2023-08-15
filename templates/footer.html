@@ -1,0 +1,26 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Footer template 
+-->
+
+<footer>
+    
+    <hr class="divider">
+
+    <img src="../static/Logo/Logo2.jpg" style="height:70px;"alt="HH logo">
+    <!-- Legal note: image was created by myself so there is no copyright -->
+
+    <p>© 2021-2022 Horizon Hotels</p>
+
+    <!-- Book button -->
+    <form action="{{ url_for('search') }}">
+        <input class ="button" type="submit" value="Book Now" />
+    </form>
+     <!--Terms and Policy-->
+     <div class="termsandpolicy"> <a href="{{ url_for('TandC') }}">Terms and Conditions</a></div>
+     <div class="termsandpolicy"> <a href="{{ url_for('privpol') }}">Privacy Policy</a></div> 
+</footer>
+{% block body %}{% endblock %}

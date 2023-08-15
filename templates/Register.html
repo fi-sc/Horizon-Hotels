@@ -1,0 +1,81 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Where user can register a new account
+-->
+
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+
+<script>
+  function validateForm() 
+  {
+    let x = document.forms["Register"]["password"].value;
+    let y = document.forms["Register"]["confirm"].value;
+    if (x != y) 
+    {
+      alert("Passwords must match");
+      return false;
+    }
+  }
+</script>
+
+
+<div class="loginPic">
+    <!-- Legal note: image was created by myself so there is no copyright -->
+    <img src="../static/Logo/3.png" style="float:left;" alt="Square HH logo with text and picture.">
+</div>
+
+<form method = "POST" class="formTop" onsubmit="validateForm()" name="Register">
+    <!-- Legal note: image was created by myself so there is no copyright -->
+    <img src="../static/Logo/1.png" alt="Square HH logo picture.">
+    
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul style="list-style-type:none;">
+      {% for message in messages %}
+        <li style='background-color:#a2fba5; color:#fffefe;'>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    {% endwith %}
+
+
+    {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
+
+    <h2>Register</h2>
+    <br>
+    <br/>{{form.firstname.label}} : {{form.firstname}} <br/>
+    <br/>{{form.lastname.label}} : {{form.lastname}} <br/>
+    <br/>{{form.email.label}} : {{form.email}} <br/>
+    <br/>{{form.password.label}} : {{form.password}}<br/>
+    <br/>{{form.confirm.label }} : {{form.confirm }} <br/>
+
+
+
+
+
+
+    <div class = "htmlButton">
+    <!-- registerbutton -->
+    <input type="submit" value="Register"><br/></div>
+
+  
+</form>
+
+
+<!--Footer-->
+{% include "footer.html" %}
+
+</body>
+</html>
+
+{% endblock %}

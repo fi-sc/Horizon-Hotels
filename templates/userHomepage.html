@@ -1,0 +1,110 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Homepage for user
+-->
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+<h1>User Dashboard</h1>
+
+
+<script>
+    function validateForm() 
+    {
+        let x = document.forms["userHome"]["pass_new"].value;
+        let y = document.forms["userHome"]["pass_confirm"].value;
+
+        if ((x != y))
+        {
+        alert("Passwords must match");
+        return false;
+        }
+    }
+
+</script>
+
+
+
+{% if error %}
+<p class=error><strong>Error:</strong> {{ error }}
+{% endif %}
+
+
+<form action="/homepage" method="POST" onsubmit="validateForm()"  name="userHome">
+ 
+    <div class = "tableContainer">
+        <h3>Show All Bookings</h3> 
+        {% if (showAllBookings is defined) and showAllBookings%}
+        <div class="table">
+        <table> 
+            <tr>
+                <th> Reservation ID</th>
+                <th> Hotel </th> 
+                <th> Check In Date </th> 
+                <th> Check Out Date </th> 
+                <th> Number of Guests </th>
+                <th> Date Reserved </th>
+                <th> Price </th>
+                <th> Type of Room</th>
+                <th> Cancel Booking? </th>
+            </tr>
+            {% for row in showAllBookings %}
+            <tr> 
+                <td> {{row[0]}} </td> 
+                <td> {{row[1]}} </td> 
+                <td> {{row[2]}} </td>              
+                <td> {{row[3]}} </td>
+                <td> {{row[4]}} guest(s)</td> 
+                <td> {{row[5]}} </td>
+                <td> {{row[6]}} </td>  
+                <td> {{row[7]}} </td>
+                <td> <input type="radio" name="bookingchoice" id = "option1" value="{{row[0]}} {{row[1]}} checked" >Cancel Booking</td>           
+            </tr>
+            {% endfor %}  
+        </table> </div>
+        
+        <br/><div class = "clickRefs"><input type="submit" name = "action" value = "Continue"  id="continueButton" ><br/></div>
+        {% else %}
+        <p>You have no bookings</p>
+        {% endif %} 
+    </div>
+
+
+    
+    <div class ="userGrid">
+    <div class="updateUserData">
+        <h3> Update Password</h3>
+        <p>Password</p>
+        <input type="password" name="pass_new" id="pass_new" ></input>
+        <p>Confirm</p>
+        <input type="password" name="pass_confirm" id="pass_confirm" ></input>
+        <br/><div class = "clickRefs"><input type="submit" name = "action" value = "Update" id="updateButton" ><br/></div>
+
+    </div>
+   
+
+
+    <div class="Logout">
+        <h3>Logout</h3>
+        <div class = "clickRefs"><a href="{{ url_for('logout')}}">Logout</a></div><br/>
+    </div>
+    </div>
+
+
+
+
+
+</form>
+<!--Footer-->
+{% include "footer.html" %}
+
+</body>
+</html>
+
+{% endblock %}

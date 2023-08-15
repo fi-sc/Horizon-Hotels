@@ -1,0 +1,57 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Homepage and sessions popup
+-->
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+
+<script type="text/javascript">
+    window.addEventListener("load", function()
+    {
+        setTimeout(
+            function open(event)
+            {
+                alert("This website uses sessions to analyse and deliver the best user experience. By proceeding you agree to our use of sessions and how we process your data.");            
+            },
+            2000 
+        )
+    });
+</script>
+
+
+ <!--Form-->
+ <div class="formTopImage">
+    <form>
+    <div class="formTop">
+        <h2>Horizon Hotels</h2></br>
+
+        <p>At Horizon Hotels, you can relax in style.</br>
+        We offer a wide range of on-site amenities and services.</br></br> 
+        </br>All of the rooms are equipped with the latest technology, including high-speed internet access and cable television.</br></br> 
+        </br> We provide many different types of accommodations, including standard, double and family rooms.</br></br> 
+        </br>  Horizon Hotels are conveniently located near the best shopping, dining, and entertainment options in the area and is
+        the perfect destination for business travelers, families, and groups.</p></br></br> 
+
+        
+    </div>
+
+   
+</form>
+</div>
+
+
+<!--Footer-->
+{% include "footer.html" %}
+
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Where user and admin can login
+-->
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+<div class="loginPic">
+    <!-- Legal note: image was created by myself so there is no copyright -->
+    <img src="../static/Logo/Logo3.jpg" alt="Square HH logo with text and picture.">
+</div>
+
+<script>
+    function validateForm() 
+    {
+      let x = document.forms["Login"]["email"].value;
+      let y = document.forms["Login"]["password"].value;
+      if (x == "") 
+      {
+        alert("Email and Password must be filled out");
+        return false;
+      }
+      if (y == "") 
+      {
+        alert("Email1 and Password must be filled out");
+        return false;
+      }
+    
+    }
+</script>
+{% if error %}
+<p class=error><strong>Error:</strong> {{ error }}
+{% endif %}
+
+<form method = "POST" class="formTop" onsubmit="validateForm()" name="Login">
+    <!-- Legal note: image was created by myself so there is no copyright -->
+    <img src="../static/Logo/1.png" alt="Square HH logo picture.">
+
+    <h2>Log In</h2>
+    <br>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul style="list-style-type:none;">
+      {% for message in messages %}
+        <li style='background-color:#a2fba5; color:#000000;'>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    {% endwith %}
+
+
+    <!-- Username -->
+    <br/>
+    {{formlogin.email.label}} : {{formlogin.email}} <br/><br/>
+    {{formlogin.password.label}} : {{formlogin.password}}<br/>
+
+    <br/><input type="submit" value = "Login"><br/>
+
+    <br/><div class="account"> Create an account? <a href="{{ url_for('register') }}">Sign up</a></div>
+
+</form>
+
+
+
+<!--Footer-->
+{% include "footer.html" %}
+
+</body>
+</html>
+
+{% endblock %}

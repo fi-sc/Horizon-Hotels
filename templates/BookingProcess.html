@@ -1,0 +1,173 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Where user can look at the room and pay for the booking
+-->
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+
+<form action="/hotel/" method="POST">
+<div action="/hotel/" method="POST" class="BookingForm">
+    <!--adds booking details from previous page-->
+    <p>Location: {{searchQuery[7]}} </p>
+    <p>Date: {{searchQuery[4]}} -  {{searchQuery[5]}}   </p>
+    <p>Guests: {{searchQuery[6]}} </p>
+   
+</div>
+
+
+
+<div class="bookingProcessContainer">
+    <div>
+        <h3>One {{searchQuery[0]}} room</h3>
+        <p>Number of Nights: {{searchQuery[1]}} days </p>
+        <p>Location: {{searchQuery[7]}} </p>
+        <h4>Price: {{searchQuery[2]}}</h4>
+        <hr class="divider">
+        <ul>More information:</ul>
+            <li>Refundable</li></br>
+            <li>No Smoking</li></br>
+            <li>No Pets Allowed</li></br>
+        </ul>
+    </div>
+
+    <div>  
+        <h3>Terms of Booking</h3>
+       <p> 
+            There may be a fee if you decide to cancel your booking.</br>
+            We collect and keep some of you information in order to process your booking.</br>
+            Room prices are inclusive of VAT per room and per night. </br>
+            More information about how we use your data is in our:
+            <div class="termsandpolicy"> <a href="{{ url_for('privpol') }}">Privacy Policy</a></div> 
+            <div class="termsandpolicy"> <a href="{{ url_for('TandC') }}">Terms and Conditions</a></div>
+       </p>
+    </div>
+    
+</div>
+
+{% if searchQuery[0] == 'standard' %}  
+<div style="padding:25px">
+    <!--Tooltips-->
+    <h3>Ammenities:</h3>
+    <div class="ContainerSelect">
+        <div class="tooltipFrame">
+            <!-- Legal note: icons were taken from https://icons8.com and free to use royalty free -->
+            <div class="tool"><img src="../static/Icons/amenities/acRoom.png" width="40" height="auto" alt="a/c">
+                <span class="tooltip">A/C</span></div>
+            <div class="tool"><img src="../static/Icons/amenities/wifiRoom.png" width="40" height="auto" alt="wifi">
+                <span class="tooltip">WiFi</span></div>
+            <div class="tool"><img src="../static/Icons/amenities/safeRoom.png" width="40" height="auto" alt="safe">
+                <span class="tooltip">Safe</span></div>
+            <div class="tool"><img src="../static/Icons/amenities/phoneRoom.png" width="40" height="auto" alt="telephone">
+                <span class="tooltip">Telephone</span></div>
+            <div class="tool"><img src="../static/Icons/amenities/tvRoom.png" width="40" height="auto" alt="tv">
+                <span class="tooltip">TV</span></div>
+        </div>
+    </div></br>
+</br><hr class="divider">
+</br><div class="aboutusGrid">
+        <div class="photoGrid">
+            <img src="../static/Rooms Pictures/Standard/1S-min.jpg" alt="Standard Bedroom" style="width: 100%">
+            <img src="../static/Rooms Pictures/Standard/2S-min.jpg" alt="Standard Bedroom" style="width: 100%">
+        </div> 
+        <div class="photoGrid">
+            <img src="../static/Rooms Pictures/Standard/3S-min.jpg" alt="Standard Bedroom" style ="width: 100%">
+            <img src="../static/Rooms Pictures/Standard/4S-min.jpg" alt="Standard Bedroom" style="width: 100%">
+        </div>
+    </div>
+</div>
+
+
+{% elif searchQuery[0] == 'double' %}
+    <div style="padding:25px">
+        <!--Tooltips-->
+        <h3>Ammenities:</h3>
+        <div class="ContainerSelect">
+                <div class="tooltipFrame">
+                    <!-- Legal note: icons were taken from https://icons8.com and free to use royalty free -->
+                    <div class="tool"><img src="../static/Icons/amenities/acRoom.png" width="40" height="auto" alt="a/c">
+                        <span class="tooltip">A/C</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/wifiRoom.png" width="40" height="auto" alt="wifi">
+                        <span class="tooltip">WiFi</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/safeRoom.png" width="40" height="auto" alt="safe">
+                        <span class="tooltip">Safe</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/phoneRoom.png" width="40" height="auto" alt="telephone">
+                        <span class="tooltip">Telephone</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/tvRoom.png" width="40" height="auto" alt="tv">
+                        <span class="tooltip">TV</span></div>
+                    <div class="tool"><img src="../static/Icons/amenities/deskRoom.png" width="40" height="auto" alt="desk">
+                        <span class="tooltip">Workspace</span></div>
+                </div>
+        </div></br>
+    </br><hr class="divider">
+    </br><div class="aboutusGrid">
+        <div class="photoGrid">
+            <img src="../static/Rooms Pictures/Double/1D-min.jpg" alt="Double Bedroom" style="width: 100%">
+            <img src="../static/Rooms Pictures/Double/2D-min.jpg" alt="Double Bedroom" style="width: 100%">
+        </div> 
+        <div class="photoGrid">
+            <img src="../static/Rooms Pictures/Double/3D-min.jpg" alt="Double Bedroom" style ="width: 100%">
+            <img src="../static/Rooms Pictures/Double/4D-min.jpg" alt="Double Bedroom" style="width: 100%">
+        </div>
+    </div>
+    </br><hr class="divider">
+    </div>
+
+{% else %}
+<div style="padding:25px">
+    <!--Tooltips-->
+    <h3>Ammenities:</h3>
+    <div class="ContainerSelect">
+        <div class="tooltipFrame">
+            <!-- Legal note: icons were taken from https://icons8.com and free to use royalty free -->
+            <div class="tool"><img src="../static/Icons/amenities/acRoom.png" width="40" height="auto" alt="a/c">
+                <span class="tooltip">A/C</span></div>
+            <div class="tool"><img src="../static/Icons/amenities/wifiRoom.png" width="40" height="auto" alt="wifi">
+                <span class="tooltip">WiFi</span></div>
+            <div class="tool"><img src="../static/Icons/amenities/safeRoom.png" width="40" height="auto" alt="safe">
+                <span class="tooltip">Safe</span></div>
+            <div class="tool"><img src="../static/Icons/amenities/phoneRoom.png" width="40" height="auto" alt="telephone">
+                <span class="tooltip">Telephone</span></div>
+            <div class="tool"><img src="../static/Icons/amenities/tvRoom.png" width="40" height="auto" alt="tv">
+                <span class="tooltip">TV</span></div>
+            <div class="tool"><img src="../static/Icons/amenities/minibarRoom.png" width="40" height="auto" alt="minibar">
+                <span class="tooltip">Minibar</span></div>
+        </div> 
+    </div>
+</br><hr class="divider">
+</br><div class="aboutusGrid">
+        <div class="photoGrid">
+            <img src="../static/Rooms Pictures/Family/1F-min.jpg" alt="Family Bedroom" style="width: 100%">
+            <img src="../static/Rooms Pictures/Family/2F-min.jpg" alt="Family Bedroom" style="width: 100%">
+        </div> 
+        <div class="photoGrid">
+            <img src="../static/Rooms Pictures/Family/3F-min.jpg" alt="Family Bedroom" style ="width: 100%">
+            <img src="../static/Rooms Pictures/Family/4F-min.jpg" alt="Family Bedroom" style ="width: 100%">
+        </div>
+    </div>
+</div>            
+{% endif %}
+
+</br><hr class="divider">
+<div style="padding:25px;">
+<h3> How would you like to pay? </h3>
+    <input type="radio" name="card" value="card">
+    <label for="card">Credit or Debit Card</label></br>
+    </br><input type="radio" name="card" value="paypal">
+    <label for="paypal">Paypal</label></br>
+<input type="submit" name = "submit_book" value="book"/>
+</div>
+
+</form>
+<!--Footer-->
+{% include "footer.html" %}
+{% endblock %}
+
+
+

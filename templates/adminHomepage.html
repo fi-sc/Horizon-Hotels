@@ -1,0 +1,164 @@
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Admin homepage view 
+-->
+
+
+{% extends "navbar.html" %}
+
+
+{% block body %}
+<script type=text/javascript>
+    const labelsSet = ({{ labels|safe }});
+    const dataSet = ({{ data|safe }});
+        
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<form  method = "POST">
+    <h1>Admin Dashboard</h1>
+    {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
+
+    
+
+
+    <div class="tableContainer">
+        <h3>Show All Bookings</h3> 
+            <div class="table">
+            {% if (showAll is defined) and showAll%}
+
+            <table> 
+                <tr>
+                    <th> Reservation ID</th>
+                    <th> Hotel </th> 
+                    <th> Check In Date </th> 
+                    <th> Check Out Date </th> 
+                    <th> Date Reserved </th>
+                    <th> Number of Guests </th>
+                    <th> Price </th>
+                    <th> Type of Room</th>
+                </tr>
+                {% for row in showAll %}
+                <tr> 
+                    <td>{{row[0]}}</td> 
+                    <td>{{row[1]}}</td> 
+                    <td>{{row[2]}}</td> 
+                    <td>{{row[3]}}</td> 
+                    <td>{{row[4]}}</td> 
+                    <td>{{row[7]}}</td> 
+                    <td>{{row[8]}}</td> 
+                    <td>{{row[9]}}</td> 
+                </tr>
+                {% endfor %}  
+            </table>
+            {% else %}
+            <p>There are no bookings</p>
+            {% endif %} 
+        </div> 
+    </div> 
+            
+
+    <div class="tableContainer">
+        <h3>Edit Capacity</h3>
+            <div class="table">
+            <table> 
+                <tr>
+                    <th> Hotel ID</th>
+                    <th> City </th> 
+                    <th> Total Capacity </th>                     
+                    <th> Standard Rooms </th>
+                    <th> Double Rooms </th>
+                    <th> Family Rooms</th>
+                    <th> Edit Capacity? </th> 
+                </tr>
+                {% for row in hotels %}
+                <tr> 
+                    <td>{{row[0]}}</td> 
+                    <td>{{row[1]}}</td> 
+                    <td>{{row[2]}}</td>
+                    <td>{{row[5]}}</td> 
+                    <td>{{row[6]}}</td>
+                    <td>{{row[7]}}</td>
+                    <td> <input type="radio" name="editCapacityRoom" id = "option2" value="{{row[0]}}" ></td>           
+
+                </tr>
+                {% endfor %}  
+            </table>  
+            </div><br/>
+
+            <p>Total Capacity</p>
+            <input type="text" name="totalcap" id="totalcap" required></input>
+            <p>Standard Capacity</p>
+            <input type="text" name="standardcap" id="standardcap" required></input>
+            <p>Double Capacity</p>
+            <input type="text" name="doublecap" id="doublecap" required></input>
+            <p>Family Capacity</p>
+            <input type="text" name="familycap" id="familycap" required></input><br/> 
+                
+     
+
+            <input type="submit" value="Edit Capacity" > <br/> 
+        </div>
+    </div>
+
+
+    <div class ="userGrid">
+        <div class="addHotel">
+            <h3>Add Hotel</h3>
+            <br/><div  class = "clickRefs"><a href="{{ url_for('adminaddhotel') }}">Add Hotel</a></div><br/>
+        </div>
+
+        <div class="chart">
+            <canvas id="AdminChart"></canvas>
+        </div>
+        <script>
+            const labels =labelsSet
+            const data = {
+              labels: labels,
+              datasets: [{
+                label: 'Number of Bookings Each Month',
+                backgroundColor: 'rgb(230, 97, 97)',
+                borderColor: 'rgb(230, 97, 97)',
+                data :  dataSet
+              }]
+            };
+          
+            const config = {
+              type: 'line',
+              data: data,
+              options: {scales:{y:{min:0}},ticks:{precision:0}}
+            };
+          </script>
+        <script>
+            const AdminChart = new Chart(
+            document.getElementById('AdminChart'),
+            config
+            );
+        </script>
+
+
+    <div class="Logout">
+        <h3>Logout</h3>
+        <br/><div class = "clickRefs"><a href="{{ url_for('logout')}}">Logout</a></div><br/>
+    </div>
+                    
+          
+    </div>
+
+
+</form>
+
+
+
+<!--Footer-->
+{% include "footer.html" %}
+
+
+
+{% endblock %}

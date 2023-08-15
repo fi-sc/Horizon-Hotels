@@ -1,0 +1,57 @@
+
+<!-- 
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with HTML, Jinja and Javascript
+Description of program: Navigation bar template
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horizon Hotels</title>
+<link rel="stylesheet" href="{{ url_for ('static', filename ='cssSheet.css')}}"/>
+    <!-- Legal note: icons were taken from https://icons8.com and free to use royalty free -->
+<link rel="icon" type="image/x-icon" href="../static/Logo/favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<!--Navigation-->
+<nav id="nav">
+    <label for="hamburgerNavigation">&#9776;</label>
+    <input type="checkbox" id="hamburgerNavigation"/>
+
+    <div id="navlinks">
+    
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('room') }}">Rooms</a>
+        <a href="{{ url_for('ourlocations') }}">Our Locations</a>
+
+        {% if 'login' in session and 'admin' not in session%} 
+        <a href="{{ url_for('homepage') }}">Dashboard</a>
+
+        {% elif 'login' in session and 'admin' in session %}
+        <a href="{{ url_for('adminHomepage') }}">Dashboard</a>
+
+        {% else %}
+        <a href="{{ url_for('login') }}">Log In</a> 
+    
+        {% endif %}
+
+        {% if 'login' in session and 'admin' not in session%}
+        <a href="{{ url_for('search') }}">Book</a>
+        {% endif %}
+
+
+    </div>
+</nav>
+
+
+
+
+
+{% block body %}{% endblock %}
