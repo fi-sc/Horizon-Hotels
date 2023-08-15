@@ -1,0 +1,380 @@
+/*
+Name of programmer: Fiorella Scarpino 
+Student ID: 21010043
+Date: 1/05/2022
+Final Version. Created with CSS
+Description of program: CSS document for formatting app
+ */
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+*{box-sizing: border-box;}
+
+/*Body*/
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #4d4d4d;
+    margin:0;}
+
+/*Navigation*/
+#nav 
+{width: 100%;background-color: #fc9f5b;}
+
+#navlinks { display: flex;}
+
+#navlinks a {
+  color: #4d4d4d;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  flex:50%;
+  transition: all 0.5s ease-out;}
+
+#navlinks a.active, a:hover,a:focus{ 
+    background-color: #7dcfb6;
+    color: #ffff;
+    padding: 10px;}
+
+#nav label, #hamburgerNavigation { display: none; }
+
+/*Form*/
+select{
+  /* Legal note: icons were taken from https://icons8.com and free to use royalty free  */
+  background-position:95%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  border:none;
+  border-radius: 1px;
+  background-color:#d8d8d8;
+  padding: 10px;}
+
+input[type="date"],input[type="number"],input[type="text"],input[type="password"]{
+  border:none;
+  border-radius: 1px;
+  background-color:#d8d8d8;
+  padding: 10px;}
+
+.button{
+  background-color:#4d4d4d;
+  border:none;
+  color: #d8d8d8;
+  text-align: center;
+  cursor: pointer;
+  padding: 20px;
+  margin: 20px;
+  display: center;
+  width: 30%;}
+
+.clickRefs > a {
+  background-color:#4d4d4d;
+  color: #d8d8d8;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  width: 30%;}
+
+.clickRefs > a:hover{ 
+  margin: 15px;
+  background-color: #7dcfb6;
+  color: #ffff;
+  padding: 10px;}
+
+input[type="submit"]{
+  border:none;
+  margin: 20px;
+  background-color:#4d4d4d;
+  color: #d8d8d8;
+  padding: 10px;
+  width: 30%;
+  text-align: center;
+  display: center;
+  cursor: pointer;}
+
+/*Home Page Form*/
+.formTopImage{
+    background-image: url("../static/Rooms Pictures/homepagePic.jpg");
+    /* Legal note: images were taken from Pixabay and are ‘Free for commercial use, no attribution required’*/
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;}
+
+.formTop{
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    overflow: hidden;
+    opacity: 0.9;
+    background-color:#ffff;}
+
+.formTop>select{width:75%;}
+.formTop>input[type="date"],.formTop>input[type="number"]{ width: 75%;}
+
+/*Room*/
+.typesContainer{
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width:100%;
+  height: 80%;}
+
+.descriptionColumn{
+  flex-flow: column;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  max-width: 100%;
+  flex-grow: 1;
+  flex-basis: 0;}
+
+.ContainerSelect{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;}
+
+.ContainerSelect > img {width: 20%;height: 100%;}
+
+/* tooltip */
+.tooltipFrame{
+display: flex;
+flex-direction: row;
+max-width: 50%;}
+
+.tool> img{padding:4px;}
+
+.tooltip {
+padding:5px;
+display: none;
+color: #4d4d4d;
+border: 1px solid #4d4d4d;
+position: absolute;
+border-radius: 5px;}
+
+.tool:hover .tooltip {display:block;}
+ 
+/*About Us*/
+.aboutusGrid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;}
+
+.photoGrid {
+  flex: 50%;
+  max-width: 50%;
+  padding: 5px ; }
+
+.photoGrid > img {
+  vertical-align:middle;
+  padding: 5px;}
+
+/*LogIn*/
+.loginPic{
+  height:100%;
+  width:40%;
+  float:right;
+  flex-direction: column;}
+
+.formTop>input[type="text"],.formTop>input[type="password"]{width: 75%;}
+.account > a,.password > a,.addhotelref>a{
+  color: #4d4d4d;
+  text-decoration: none;}
+
+.password>a:hover,.account>a:hover{
+  margin: 15px;
+  background-color: #4d4d4d;
+  color: #ffff;
+  padding: 10px;}
+
+/*Book*/
+.formTopInline{ 
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  width: 100%;}
+
+.formTopInline > p{
+   padding: 10px 10px;
+   margin: 10px;}
+
+.formTopInline >button{width: auto;padding: 10px;}
+
+.formTopInline>img{
+    display:flex;
+    width: 20%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;}
+
+/*Divider*/
+hr.divider{border-top: 1px solid #4d4d4d;width: 98%;}
+
+/*Footer*/
+footer {
+    background: color #ffff;
+    width: 100%;
+    text-align: center;
+    padding: 10px;}
+  
+/*Booking Process*/
+.BookingForm{
+  border-radius: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  width: 100%;
+  background-color: #fbd1a2;}
+
+.BookingForm > p{
+  padding:10px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;}
+
+input[type="checkbox"]{height: 20px;width: 20px;}
+
+.bookingProcessContainer{
+  padding: 15px;
+  display: flex;
+  flex-direction: row;}
+
+.bookingProcessContainer > div {padding: 20px;flex: 50%;}
+
+.endBook{
+  padding: 20px;
+  margin: 20px;
+  text-align: center;}
+
+/*terms and conditions*/
+.termsandpolicy{margin: 10px;}
+.termsandpolicy > a{
+  padding: 5px;
+  text-decoration: none;
+  color: #4d4d4d;}
+
+/* User and Admin Homepage*/
+.userGrid{
+  display: flex;
+  flex-direction: column;
+  text-align: center;}
+
+.userGrid > div{
+    background-color: #fbd1a2;
+    padding: 10px;
+    margin: 15px;
+    border: 1px solid #4d4d4d;}
+
+.tableContainer{
+  display: block;
+  overflow-x: auto;
+  background-color: #fbd1a2;
+  padding: 10px;
+  margin: 15px;
+  flex: 100%;
+  text-align: center;
+  border: 1px solid #4d4d4d;}
+
+.table{ flex:100%;}
+tr:nth-child(even) {background-color: #ffff;}
+tr:nth-child(odd) {background-color: #d8d8d8;}
+
+/* error */
+.error {
+  background-color: #e66161;
+  border: 1px solid #4d4d4d;
+  color:#ffffff;
+  padding: 10px;
+  margin: 30px;}
+
+/* Smartphone breakpoint */
+@media screen and (max-width: 767px)
+{
+    /* Navigation */
+    #navlinks a {
+      display: block;
+      width: 100%;
+      border-top: 1px solid #ffff;}
+    #nav label { 
+      display: inline-block; 
+      color: white;
+      background: #4d4d4d;
+      padding: 10px;}
+    #navlinks { display: none; }
+    #nav input:checked ~ #navlinks { display: block; }
+
+    /*Home Page*/
+    .formTop{ width: 100%;}
+
+    /* Room*/
+    .ContainerSelect{flex-direction: column;}
+    .ContainerSelect > img {
+        width: 100%;
+        height: 100%;}
+
+    /* About page */
+    .photoGrid{
+        flex: 100%;
+        max-width: 100%;}
+
+    /* LogIn */
+    .loginPic{ display:none;}
+
+    .formTop >img{
+        display:flex;
+        width: 30%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;}
+
+    /*Book*/
+    .formTopInline {
+    flex-direction: column;
+    align-items: stretch;}
+
+    .bookingProcessContainer{flex-direction: column;}
+}
+
+/* Tablet Breakpoint */
+@media screen and (min-width: 768px) and (max-width:1023px)
+{
+    /* LogIn */
+    .loginPic{display: none;}
+
+    .formTop >img{
+        display:flex;
+        width: 20%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;} 
+
+    .formTop{
+        width: 100%;
+        height: auto;}
+
+    /* Room*/
+    .ContainerSelect{flex-direction: column;}
+
+    .ContainerSelect > img {
+        width: 100%;
+        height: 100%;}
+
+    /*Book*/
+    .formTopInline {
+      flex-direction: column;
+      align-items: stretch;}
+}
+
+/* Desktop Breakpoint */
+@media screen and (min-width: 1024px)
+{
+   /*logIn */
+   .formTop >img{display:none;}    
+}
+
