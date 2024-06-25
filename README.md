@@ -2,5 +2,5 @@
 
 ## A web based app for the booking and mamnagment system of a chain hotel company.
 
-- created using python and HTML
-- instructions for login are located in 'instructions_for_app' file
+- Created using python and HTML
+- Instructions for login are located in 'instructions_on_app' file
